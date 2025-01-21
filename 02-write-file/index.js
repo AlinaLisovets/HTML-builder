@@ -10,16 +10,15 @@ const rl = readline.createInterface({
 console.log('Здравствуйте! Введите текст: ');
 
 rl.on('line', (input) => {
-  if (input === '.exit') {
+  if (input === 'exit') {
     console.log('Окей. До свидания!');
     rl.close();
-    process.exit();
   } else {
     outputStream.write(input + '\n');
   }
 });
 
-process.on('SIGINT', () => {
+rl.on('SIGINT', () => {
   console.log('\nОкей. До свидания!');
   rl.close();
   process.exit();
