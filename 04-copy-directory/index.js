@@ -1,5 +1,5 @@
-const fs = require('node:fs');
-const path = require('node:path');
+import path from 'node:path';
+import fs from 'node:fs';
 
 async function copyDir(source, destination) {
     
@@ -26,8 +26,8 @@ async function copyDir(source, destination) {
 }
 
 async function copyFile() {
-  const sourceDir = path.join(__dirname, 'files');
-  const destinationDir = path.join(__dirname, 'files-copy');
+  const sourceDir = `04-copy-directory/files`;
+  const destinationDir = `04-copy-directory/files-copy`;
 
   await copyDir(sourceDir, destinationDir);
   console.log('Копирование прошло успешно!');

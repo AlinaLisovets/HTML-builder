@@ -1,5 +1,6 @@
-const fs = require('node:fs');
-const readline = require('node:readline');
+import fs from 'node:fs';
+import readline from 'node:readline';
+
 const outputStream = fs.createWriteStream('02-write-file/output.txt', { flags: 'a' });
 
 const rl = readline.createInterface({
